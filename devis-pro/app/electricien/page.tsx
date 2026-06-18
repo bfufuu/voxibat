@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Logiciel devis électricien — Factur-X 2026 | Quotio',
+  title: 'Logiciel devis électricien — Factur-X 2026 | Voxibat',
   description: 'Créez vos devis d\'électricité en 10 minutes avec l\'IA. Facturation électronique conforme Factur-X 2026. Essai gratuit 14 jours.',
 }
 
@@ -17,7 +17,7 @@ export default function ElectricienPage() {
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50">
       <nav className="bg-white shadow-sm">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-blue-600">Quotio</Link>
+          <Link href="/" className="text-xl font-bold text-blue-600">Voxibat</Link>
           <div className="flex gap-4">
             <Link href="/login" className="px-4 py-2 text-gray-600 hover:text-blue-600 text-sm">Connexion</Link>
             <Link href="/register" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">Essai gratuit</Link>

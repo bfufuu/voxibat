@@ -80,7 +80,7 @@ export default async function DashboardPage(props: { searchParams: Promise<{ abo
 
       {abonnementSucces && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 font-medium">
-          🎉 Abonnement activé ! Bienvenue dans Quotio. Vous avez un accès illimité.
+          🎉 Abonnement activé ! Bienvenue dans Voxibat. Vous avez un accès illimité.
         </div>
       )}
 

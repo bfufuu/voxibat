@@ -24,7 +24,7 @@ export default function StripeButton() {
       disabled={loading}
       className="w-full py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 disabled:opacity-60 transition-colors"
     >
-      {loading ? '⏳ Redirection...' : '💳 S\'abonner pour 39€/mois'}
+      {loading ? '⏳ Redirection...' : '💳 S\'abonner pour 49€/mois'}
     </button>
   )
 }

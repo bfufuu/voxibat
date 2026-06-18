@@ -42,7 +42,7 @@
 > Avant je passais 2h sur Excel pour un devis pareil.
 > Maintenant c'est 8 secondes + 2 minutes de vérification.
 >
-> Le logiciel s'appelle Quotio, il y a 14 jours d'essai gratuit.
+> Le logiciel s'appelle Voxibat, il y a 14 jours d'essai gratuit.
 > [lien vers /register]
 
 ---
@@ -79,7 +79,7 @@
 > ✅ Date d'échéance obligatoire
 > ✅ XML lisible par machine joint au PDF
 >
-> Quotio génère tout ça automatiquement sur chaque facture.
+> Voxibat génère tout ça automatiquement sur chaque facture.
 > Diagnostic gratuit : [lien vers /diagnostic]
 
 ---
@@ -89,7 +89,7 @@
 > "Je suis plombier depuis 15 ans et j'ai toujours fait mes devis sur Word.
 > Je passais facilement 3h par semaine là-dessus.
 >
-> Depuis que j'utilise Quotio, je décris mon chantier à voix haute dans la voiture,
+> Depuis que j'utilise Voxibat, je décris mon chantier à voix haute dans la voiture,
 > l'IA génère le devis, je vérifie en 2 minutes et j'envoie.
 >
 > La première semaine j'ai récupéré 6h que je n'avais plus. Et mes devis sont conformes 2026."
@@ -104,12 +104,12 @@
 
 ## POST 6 — La comparaison prix (objection argent)
 
-> Quotio vs les alternatives :
+> Voxibat vs les alternatives :
 >
 > 📄 Word/Excel → Gratuit → Non conforme 2026 → 2-3h par devis
 > 💼 EBP Bâtiment → 80€/mois → Compliqué → Formation nécessaire
 > 🔧 Batappli → 60€/mois → Pas d'IA → Pas de voix
-> ⚡ Quotio → 39€/mois → IA + Voix + Factur-X → 10 min/devis
+> ⚡ Voxibat → 49€/mois → IA + Voix + Factur-X → 10 min/devis
 >
 > Et les 14 premiers jours sont gratuits.
 > [lien]

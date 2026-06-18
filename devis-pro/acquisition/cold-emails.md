@@ -1,4 +1,4 @@
-# Séquence Cold Email — Quotio
+# Séquence Cold Email — Voxibat
 
 ## Comment trouver les emails d'artisans (gratuit)
 1. Google Maps → recherche "plombier [ville]" → copier les emails des fiches
@@ -20,13 +20,13 @@ Objectif : 50 emails/jour × 5 jours = 250 prospects pour commencer
 >
 > En résumé : à partir de cette date, vos clients professionnels pourront légalement refuser toute facture qui n'est pas au format Factur-X. Si vous utilisez Word, Excel ou un logiciel non certifié, vous risquez des retards de paiement importants.
 >
-> J'ai développé Quotio, un logiciel conçu spécifiquement pour les artisans BTP qui génère automatiquement des factures conformes EN 16931, avec en plus une IA qui crée vos devis en 10 minutes à partir d'une simple description vocale.
+> J'ai développé Voxibat, un logiciel conçu spécifiquement pour les artisans BTP qui génère automatiquement des factures conformes EN 16931, avec en plus une IA qui crée vos devis en 10 minutes à partir d'une simple description vocale.
 >
 > Est-ce que vous savez si votre logiciel actuel est conforme ?
 >
 > Cordialement,
 > [Votre prénom]
-> Quotio — Devis et facturation pour artisans BTP
+> Voxibat — Devis et facturation pour artisans BTP
 > [lien diagnostic]
 
 ---
@@ -39,7 +39,7 @@ Objectif : 50 emails/jour × 5 jours = 250 prospects pour commencer
 >
 > Je reviens vers vous car j'aurais dû être plus concret dans mon premier message.
 >
-> Voici ce qu'Quotio fait concrètement pour un artisan [métier] :
+> Voici ce qu'Voxibat fait concrètement pour un artisan [métier] :
 >
 > 1. Vous décrivez le chantier à voix haute (ou par écrit)
 > 2. L'IA génère toutes les lignes du devis avec les prix du marché
@@ -73,7 +73,7 @@ Objectif : 50 emails/jour × 5 jours = 250 prospects pour commencer
 >
 > Ceux qui s'y prennent maintenant ont 3 mois pour tester, se former, migrer leurs données tranquillement.
 >
-> Quotio est prêt aujourd'hui. 14 jours gratuits pour voir si ça vous convient.
+> Voxibat est prêt aujourd'hui. 14 jours gratuits pour voir si ça vous convient.
 >
 > Si ce n'est pas pour vous, je comprends. Mais si vous utilisez encore Word ou Excel, c'est maintenant qu'il faut bouger.
 >
@@ -93,7 +93,7 @@ Objectif : 50 emails/jour × 5 jours = 250 prospects pour commencer
 > Je vous laisse avec une question simple :
 > Quand votre premier client professionnel vous demandera une facture Factur-X en septembre 2026, qu'est-ce que vous lui répondrez ?
 >
-> Si vous cherchez une solution d'ici là, Quotio est disponible avec 14 jours gratuits.
+> Si vous cherchez une solution d'ici là, Voxibat est disponible avec 14 jours gratuits.
 > [lien /register]
 >
 > Bonne continuation,

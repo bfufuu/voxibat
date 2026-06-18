@@ -161,7 +161,7 @@ export default function DiagnosticPage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
         <nav className="bg-white shadow-sm">
           <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-blue-600">Quotio</Link>
+            <Link href="/" className="text-xl font-bold text-blue-600">Voxibat</Link>
             <Link href="/login" className="text-sm text-gray-600 hover:text-blue-600">Déjà client →</Link>
           </div>
         </nav>
@@ -201,7 +201,7 @@ export default function DiagnosticPage() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <nav className="bg-white shadow-sm">
           <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-blue-600">Quotio</Link>
+            <Link href="/" className="text-xl font-bold text-blue-600">Voxibat</Link>
             <Link href="/login" className="text-sm text-gray-600 hover:text-blue-600">Déjà client →</Link>
           </div>
         </nav>
@@ -242,7 +242,7 @@ export default function DiagnosticPage() {
           {/* CTA */}
           <div className="bg-blue-600 text-white rounded-2xl p-8 text-center">
             <p className="text-blue-200 text-sm font-medium mb-2">LA SOLUTION</p>
-            <h3 className="text-2xl font-bold mb-3">Quotio génère des factures Factur-X conformes EN 16931</h3>
+            <h3 className="text-2xl font-bold mb-3">Voxibat génère des factures Factur-X conformes EN 16931</h3>
             <p className="text-blue-100 text-sm mb-6">
               Chaque facture que vous créez est automatiquement au bon format.
               Téléchargez le XML Factur-X en un clic — zéro effort de votre côté.
@@ -289,7 +289,7 @@ export default function DiagnosticPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <nav className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-blue-600">Quotio</Link>
+          <Link href="/" className="text-xl font-bold text-blue-600">Voxibat</Link>
           <Link href="/login" className="text-sm text-gray-600 hover:text-blue-600">Déjà client →</Link>
         </div>
       </nav>

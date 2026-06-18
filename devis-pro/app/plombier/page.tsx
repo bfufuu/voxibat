@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Logiciel devis plombier — Factur-X 2026 | Quotio',
+  title: 'Logiciel devis plombier — Factur-X 2026 | Voxibat',
   description: 'Créez vos devis de plomberie en 10 minutes avec l\'IA. Facturation électronique conforme Factur-X 2026. Essai gratuit 14 jours.',
 }
 
@@ -17,7 +17,7 @@ export default function PlombierPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <nav className="bg-white shadow-sm">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-blue-600">Quotio</Link>
+          <Link href="/" className="text-xl font-bold text-blue-600">Voxibat</Link>
           <div className="flex gap-4">
             <Link href="/login" className="px-4 py-2 text-gray-600 hover:text-blue-600 text-sm">Connexion</Link>
             <Link href="/register" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">Essai gratuit</Link>
@@ -84,7 +84,7 @@ export default function PlombierPage() {
             { icon: '🎙️', titre: 'Dictée vocale', desc: 'Décrivez le chantier en conduisant. L\'IA génère le devis à votre arrivée.' },
             { icon: '📄', titre: 'Factur-X conforme 2026', desc: 'Chaque facture génère automatiquement le XML EN 16931 requis par la loi.' },
             { icon: '💰', titre: 'Catalogue de vos tarifs', desc: 'Renseignez votre taux horaire et prix matériaux. L\'IA les utilise en priorité.' },
-            { icon: '📧', titre: 'Relances automatiques', desc: 'Si votre client ne paye pas, Quotio envoie des emails de relance progressifs.' },
+            { icon: '📧', titre: 'Relances automatiques', desc: 'Si votre client ne paye pas, Voxibat envoie des emails de relance progressifs.' },
           ].map(f => (
             <div key={f.titre} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-4">
               <span className="text-3xl">{f.icon}</span>

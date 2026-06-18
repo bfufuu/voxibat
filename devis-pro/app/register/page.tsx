@@ -38,7 +38,7 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="bg-white p-8 rounded-2xl shadow-sm w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-blue-600 mb-1">Quotio</h1>
+          <h1 className="text-2xl font-bold text-blue-600 mb-1">Voxibat</h1>
           <h2 className="text-xl font-semibold text-gray-900">Créer un compte</h2>
         </div>
 

@@ -64,7 +64,7 @@ const FAQ = [
   },
   {
     q: 'Je ne suis pas à l\'aise avec la technologie, c\'est pour moi ?',
-    r: 'C\'est fait pour vous. Si vous savez envoyer un email, vous savez utiliser Quotio. La moyenne d\'âge de nos utilisateurs est 47 ans.',
+    r: 'C\'est fait pour vous. Si vous savez envoyer un email, vous savez utiliser Voxibat. La moyenne d\'âge de nos utilisateurs est 47 ans.',
   },
   {
     q: 'Mes anciens devis Word/Excel, je peux les importer ?',
@@ -76,7 +76,7 @@ const FAQ = [
   },
   {
     q: 'Que se passe-t-il après les 14 jours d\'essai ?',
-    r: '39€/mois sans engagement. Résiliable à tout moment en un clic. Aucun frais caché.',
+    r: '49€/mois sans engagement. Résiliable à tout moment en un clic. Aucun frais caché.',
   },
   {
     q: 'Mes données sont-elles sécurisées ?',
@@ -88,23 +88,23 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white border-b border-gray-100 z-50">
+      {/* Navigation — fond sombre sur le hero */}
+      <nav className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-10">
-            <h1 className="text-2xl font-bold text-blue-600">Quotio</h1>
-            <div className="hidden md:flex gap-6 text-sm text-gray-600">
-              <a href="#fonctionnalites" className="hover:text-blue-600 transition-colors">Fonctionnalités</a>
-              <a href="#comparaison" className="hover:text-blue-600 transition-colors">Comparaison</a>
-              <a href="#tarifs" className="hover:text-blue-600 transition-colors">Tarifs</a>
-              <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
+            <h1 className="text-2xl font-bold text-white">Voxibat</h1>
+            <div className="hidden md:flex gap-6 text-sm text-gray-300">
+              <a href="#fonctionnalites" className="hover:text-white transition-colors">Fonctionnalités</a>
+              <a href="#comparaison" className="hover:text-white transition-colors">Comparaison</a>
+              <a href="#tarifs" className="hover:text-white transition-colors">Tarifs</a>
+              <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/login" className="px-4 py-2 text-gray-600 hover:text-blue-600 text-sm transition-colors">
+            <Link href="/login" className="px-4 py-2 text-gray-300 hover:text-white text-sm transition-colors">
               Connexion
             </Link>
-            <Link href="/register" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium transition-colors">
+            <Link href="/register" className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400 text-sm font-medium transition-colors">
               Essai gratuit →
             </Link>
           </div>
@@ -119,36 +119,45 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-20 pb-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+      {/* Hero — fond sombre avec blobs animés */}
+      <section className="relative bg-gray-950 pt-24 pb-28 px-4 overflow-hidden">
+
+        {/* Blobs animés */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob" />
+        <div className="absolute top-10 right-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-violet-600 rounded-full mix-blend-screen filter blur-3xl opacity-15 animate-blob animation-delay-4000" />
+
+        {/* Grille décorative subtile */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+        <div className="relative max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-white/10">
             <span>✅</span> Conforme Factur-X EN 16931 — Obligatoire 2026
           </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Vos devis BTP en <span className="text-blue-600">10 minutes</span>,<br />
-            vos factures <span className="text-blue-600">conformes 2026</span>
+          <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+            Vos devis BTP en <span className="text-blue-400">10 minutes</span>,<br />
+            vos factures <span className="text-blue-400">conformes 2026</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">
             Dictez votre chantier à voix haute. L'IA génère le devis complet avec vos prix.
             Factures Factur-X automatiques. Relances clients sans effort.
           </p>
-          <p className="text-sm text-gray-400 mb-10">
+          <p className="text-sm text-gray-500 mb-10">
             La seule solution BTP avec voix + IA + conformité légale 2026 intégrée.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link href="/register" className="px-10 py-4 bg-blue-600 text-white text-lg font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="/register" className="px-10 py-4 bg-blue-500 text-white text-lg font-bold rounded-xl hover:bg-blue-400 transition-colors shadow-lg shadow-blue-900/40">
               Essayer gratuitement 14 jours
             </Link>
-            <Link href="/exemple-devis" className="px-10 py-4 bg-white text-blue-600 text-lg font-semibold rounded-xl hover:bg-blue-50 transition-colors border-2 border-blue-200">
+            <Link href="/exemple-devis" className="px-10 py-4 bg-white/10 text-white text-lg font-semibold rounded-xl hover:bg-white/20 transition-colors border border-white/20">
               👀 Voir un exemple de devis
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-            <span>✅ Sans carte bancaire</span>
-            <span>✅ Sans engagement</span>
-            <span>✅ 14 jours gratuits</span>
-            <span>✅ Conforme Factur-X 2026</span>
+            <span className="text-gray-400">✅ Sans carte bancaire</span>
+            <span className="text-gray-400">✅ Sans engagement</span>
+            <span className="text-gray-400">✅ 14 jours gratuits</span>
+            <span className="text-gray-400">✅ Conforme Factur-X 2026</span>
           </div>
         </div>
       </section>
@@ -160,7 +169,7 @@ export default function Home() {
             { val: '10 min', label: 'pour un devis complet' },
             { val: '2h', label: 'économisées par semaine' },
             { val: '100%', label: 'conforme Factur-X 2026' },
-            { val: '39€', label: 'par mois tout compris' },
+            { val: '49€', label: 'par mois tout compris' },
           ].map(s => (
             <div key={s.label}>
               <p className="text-3xl font-bold text-blue-600 mb-1">{s.val}</p>
@@ -224,7 +233,7 @@ export default function Home() {
       <section id="comparaison" className="py-20 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
-            <h3 className="text-3xl font-bold text-gray-900 mb-3">Pourquoi Quotio ?</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-3">Pourquoi Voxibat ?</h3>
             <p className="text-gray-500">La seule solution qui couvre la conformité légale 2026</p>
           </div>
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -234,7 +243,7 @@ export default function Home() {
                   <th className="px-6 py-4 text-left text-gray-500 font-medium w-1/2">Fonctionnalité</th>
                   <th className="px-4 py-4 text-center text-gray-400 font-medium">Word/Excel</th>
                   <th className="px-4 py-4 text-center text-gray-400 font-medium">Autres logiciels</th>
-                  <th className="px-4 py-4 text-center text-blue-600 font-bold bg-blue-50">Quotio</th>
+                  <th className="px-4 py-4 text-center text-blue-600 font-bold bg-blue-50">Voxibat</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-50">
@@ -263,7 +272,7 @@ export default function Home() {
           <p className="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
             La facturation électronique devient obligatoire en France. Vos clients professionnels
             devront légalement rejeter tout document non conforme au format Factur-X.
-            Quotio génère ce format automatiquement sur chaque facture.
+            Voxibat génère ce format automatiquement sur chaque facture.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/diagnostic" className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:bg-red-50 transition-colors">
@@ -282,7 +291,7 @@ export default function Home() {
           <h3 className="text-3xl font-bold text-gray-900 mb-3">Un seul tarif, tout compris</h3>
           <p className="text-gray-500 mb-12">Pas de formule basique qui cache les fonctionnalités importantes</p>
           <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl p-10 shadow-xl">
-            <div className="text-6xl font-black mb-2">39€</div>
+            <div className="text-6xl font-black mb-2">49€</div>
             <div className="text-blue-200 mb-8">par mois · sans engagement</div>
             <ul className="text-left space-y-3 mb-10">
               {[
@@ -347,7 +356,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-400 py-10 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <p className="text-white font-bold text-lg mb-1">Quotio</p>
+            <p className="text-white font-bold text-lg mb-1">Voxibat</p>
             <p className="text-sm">Devis et facturation pour artisans BTP · Conforme 2026</p>
           </div>
           <div className="flex gap-6 text-sm">

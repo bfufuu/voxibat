@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quotio - Devis pour artisans BTP",
+  title: "Voxibat - Devis pour artisans BTP",
   description: "Générez des devis professionnels en quelques minutes",
 };
 

@@ -31,14 +31,14 @@ export default async function AbonnementPage() {
             <div className="text-5xl mb-4">🚀</div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">Passez à l'abonnement</h1>
             <p className="text-gray-500 mb-8">
-              Continuez à utiliser Quotio sans interruption.
+              Continuez à utiliser Voxibat sans interruption.
             </p>
           </>
         )}
 
         <div className="bg-blue-600 text-white p-6 rounded-xl mb-6">
           <div className="text-4xl font-bold mb-1">
-            39€<span className="text-lg font-normal">/mois</span>
+            49€<span className="text-lg font-normal">/mois</span>
           </div>
           <p className="text-blue-200 text-sm mb-5">Sans engagement · Résiliable à tout moment</p>
           <ul className="text-sm space-y-2 text-left mb-6">

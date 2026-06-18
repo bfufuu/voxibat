@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import PrintButton from '@/components/PrintButton'
 
 export const metadata: Metadata = {
-  title: 'Exemple de devis BTP généré par IA | Quotio',
-  description: 'Découvrez un exemple de devis professionnel généré par l\'IA Quotio en moins de 10 minutes. Conforme Factur-X 2026.',
+  title: 'Exemple de devis BTP généré par IA | Voxibat',
+  description: 'Découvrez un exemple de devis professionnel généré par l\'IA Voxibat en moins de 10 minutes. Conforme Factur-X 2026.',
 }
 
 const DEVIS_EXEMPLE = {
@@ -51,7 +51,7 @@ export default function ExempleDevisPage() {
       {/* Nav */}
       <nav className="bg-white shadow-sm print:hidden">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-blue-600">Quotio</Link>
+          <Link href="/" className="text-xl font-bold text-blue-600">Voxibat</Link>
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-500 hidden sm:block">Exemple de devis généré par l'IA</span>
             <Link href="/register" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium transition-colors">
@@ -63,7 +63,7 @@ export default function ExempleDevisPage() {
 
       {/* Bandeau "généré par IA" */}
       <div className="bg-blue-600 text-white py-3 px-4 text-center text-sm print:hidden">
-        ⚡ Ce devis a été généré par l'IA Quotio en <strong>47 secondes</strong> à partir d'une description vocale —{' '}
+        ⚡ Ce devis a été généré par l'IA Voxibat en <strong>47 secondes</strong> à partir d'une description vocale —{' '}
         <Link href="/register" className="underline font-medium hover:text-blue-200">
           Essayez gratuitement 14 jours →
         </Link>
