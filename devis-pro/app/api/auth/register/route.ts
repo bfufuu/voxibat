@@ -10,6 +10,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Email et mot de passe requis' }, { status: 400 })
   }
 
+  if (password.length < 8) {
+    return NextResponse.json({ error: 'Le mot de passe doit contenir au moins 8 caractères' }, { status: 400 })
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return NextResponse.json({ error: 'Email invalide' }, { status: 400 })
+  }
+
   const existing = await prisma.user.findUnique({ where: { email } })
   if (existing) {
     return NextResponse.json({ error: 'Cet email est déjà utilisé' }, { status: 400 })
