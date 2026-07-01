@@ -359,13 +359,20 @@ export default function Home() {
             <p className="text-white font-bold text-lg mb-1">Voxibat</p>
             <p className="text-sm">Devis et facturation pour artisans BTP · Conforme 2026</p>
           </div>
-          <div className="flex gap-6 text-sm">
+          <div className="flex flex-wrap gap-6 text-sm">
             <Link href="/exemple-devis" className="hover:text-white transition-colors">Exemple de devis</Link>
             <Link href="/diagnostic" className="hover:text-white transition-colors">Diagnostic 2026</Link>
             <Link href="/plombier" className="hover:text-white transition-colors">Plombiers</Link>
             <Link href="/electricien" className="hover:text-white transition-colors">Électriciens</Link>
             <Link href="/peintre" className="hover:text-white transition-colors">Peintres</Link>
           </div>
+        </div>
+        <div className="max-w-5xl mx-auto mt-6 pt-6 border-t border-gray-800 flex flex-wrap justify-center gap-6 text-xs">
+          <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
+          <Link href="/cgu" className="hover:text-white transition-colors">CGU</Link>
+          <Link href="/cgv" className="hover:text-white transition-colors">CGV</Link>
+          <Link href="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link>
+          <span>© 2026 Voxibat — Benjamin Furrer</span>
         </div>
       </footer>
     </div>
