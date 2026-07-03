@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma'
 import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import ResetTestDataButton from './ResetTestDataButton'
+import TogglePaidButton from './TogglePaidButton'
 
 export const metadata: Metadata = {
   title: 'Admin | Voxibat',
@@ -163,7 +164,10 @@ export default async function AdminPage() {
                       </div>
                       <p className="text-sm text-blue-600">{u.email}</p>
                     </div>
-                    <p className="text-xs text-gray-400">Inscrit le {new Date(u.createdAt).toLocaleDateString('fr-FR')}</p>
+                    <div className="flex flex-col items-end gap-2">
+                      <p className="text-xs text-gray-400">Inscrit le {new Date(u.createdAt).toLocaleDateString('fr-FR')}</p>
+                      <TogglePaidButton userId={u.id} isPaid={u.isPaid} />
+                    </div>
                   </div>
 
                   {/* Infos entreprise */}
