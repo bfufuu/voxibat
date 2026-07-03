@@ -58,18 +58,16 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Barre mobile */}
-      <div className="md:hidden flex items-center px-4 py-3 bg-white border-b border-gray-200 sticky top-0 z-30">
-        <button
-          onClick={() => setOpen(true)}
-          className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
-          aria-label="Menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+      {/* Bouton hamburger fixe en haut à gauche sur mobile */}
+      <button
+        onClick={() => setOpen(true)}
+        className="md:hidden fixed top-3 left-3 z-30 p-2 rounded-lg bg-white/90 backdrop-blur shadow-sm text-gray-600"
+        aria-label="Menu"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
       {/* Overlay mobile */}
       {open && (

@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex flex-1">
         <Sidebar />
         <div className="flex-1 flex flex-col overflow-auto min-w-0">
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-12 md:pt-0">{children}</main>
           <footer className="px-4 md:px-8 py-4 border-t border-gray-200 bg-white">
             <div className="flex flex-wrap gap-4 text-xs text-gray-400">
               <Link href="/mentions-legales" className="hover:text-gray-600 transition-colors">Mentions légales</Link>
