@@ -1,59 +1,108 @@
-import Link from 'next/link'
-import LogoutButton from './LogoutButton'
+'use client'
 
-export default function Sidebar() {
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import { useState } from 'react'
+
+const navItems = [
+  { href: '/dashboard', icon: '📊', label: 'Tableau de bord' },
+  { href: '/devis', icon: '📄', label: 'Mes devis' },
+  { href: '/devis/nouveau', icon: '➕', label: 'Nouveau devis' },
+  { href: '/factures', icon: '🧾', label: 'Mes factures' },
+  { href: '/tarifs', icon: '💰', label: 'Mes tarifs' },
+  { href: '/profil', icon: '👤', label: 'Mon profil' },
+  { href: '/contact', icon: '💬', label: 'Contact' },
+]
+
+function NavLinks({ onClose }: { onClose?: () => void }) {
+  const pathname = usePathname()
+  const router = useRouter()
+
+  async function handleLogout() {
+    await fetch('/api/auth/logout', { method: 'POST' })
+    router.push('/login')
+  }
+
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 flex flex-col min-h-screen">
-      <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-blue-600">Voxibat</h1>
-      </div>
+    <>
       <nav className="flex-1 p-4 space-y-1">
-        <Link
-          href="/dashboard"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>📊</span> Tableau de bord
-        </Link>
-        <Link
-          href="/devis"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>📄</span> Mes devis
-        </Link>
-        <Link
-          href="/devis/nouveau"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>➕</span> Nouveau devis
-        </Link>
-        <Link
-          href="/factures"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>🧾</span> Mes factures
-        </Link>
-        <Link
-          href="/tarifs"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>💰</span> Mes tarifs
-        </Link>
-        <Link
-          href="/profil"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>👤</span> Mon profil
-        </Link>
-        <Link
-          href="/contact"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-        >
-          <span>💬</span> Contact
-        </Link>
+        {navItems.map(item => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={onClose}
+            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+              pathname === item.href
+                ? 'bg-blue-50 text-blue-600 font-medium'
+                : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+            }`}
+          >
+            <span>{item.icon}</span> {item.label}
+          </Link>
+        ))}
       </nav>
       <div className="p-4 border-t border-gray-200">
-        <LogoutButton />
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors text-sm"
+        >
+          <span>🚪</span> Se déconnecter
+        </button>
       </div>
-    </aside>
+    </>
+  )
+}
+
+export default function Sidebar() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      {/* Barre mobile */}
+      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 sticky top-0 z-30">
+        <span className="text-lg font-bold text-blue-600">Voxibat</span>
+        <button
+          onClick={() => setOpen(true)}
+          className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+          aria-label="Menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Overlay mobile */}
+      {open && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/40 z-40"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
+      {/* Drawer mobile */}
+      <div className={`md:hidden fixed top-0 left-0 h-full w-72 bg-white z-50 flex flex-col shadow-xl transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="flex items-center justify-between p-5 border-b border-gray-200">
+          <span className="text-xl font-bold text-blue-600">Voxibat</span>
+          <button
+            onClick={() => setOpen(false)}
+            className="p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <NavLinks onClose={() => setOpen(false)} />
+      </div>
+
+      {/* Sidebar desktop */}
+      <aside className="hidden md:flex w-64 bg-white border-r border-gray-200 flex-col min-h-screen">
+        <div className="p-6 border-b border-gray-200">
+          <h1 className="text-xl font-bold text-blue-600">Voxibat</h1>
+        </div>
+        <NavLinks />
+      </aside>
+    </>
   )
 }
