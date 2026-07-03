@@ -58,7 +58,7 @@ export default function ProfilPage() {
               type="text"
               value={profil.name}
               onChange={e => setProfil(p => ({ ...p, name: e.target.value }))}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
@@ -76,7 +76,7 @@ export default function ProfilPage() {
               type="text"
               value={profil.company}
               onChange={e => setProfil(p => ({ ...p, company: e.target.value }))}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Plomberie Martin SARL"
             />
           </div>
@@ -86,7 +86,7 @@ export default function ProfilPage() {
               type="text"
               value={profil.siret}
               onChange={e => setProfil(p => ({ ...p, siret: e.target.value }))}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="12345678901234"
             />
           </div>
@@ -96,7 +96,7 @@ export default function ProfilPage() {
               type="tel"
               value={profil.phone}
               onChange={e => setProfil(p => ({ ...p, phone: e.target.value }))}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="06 12 34 56 78"
             />
           </div>
@@ -106,7 +106,7 @@ export default function ProfilPage() {
               type="text"
               value={profil.address}
               onChange={e => setProfil(p => ({ ...p, address: e.target.value }))}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="12 rue de la Paix, 75001 Paris"
             />
           </div>

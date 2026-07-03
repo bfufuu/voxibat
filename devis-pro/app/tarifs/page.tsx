@@ -117,7 +117,7 @@ export default function TarifsPage() {
               placeholder="Ex: Main d'œuvre plomberie"
               value={form.designation}
               onChange={e => setForm(f => ({ ...f, designation: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               required
             />
           </div>
@@ -126,7 +126,7 @@ export default function TarifsPage() {
             <select
               value={form.unite}
               onChange={e => setForm(f => ({ ...f, unite: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
             >
               {UNITES_SUGGERES.map(u => <option key={u} value={u}>{u}</option>)}
             </select>
@@ -140,7 +140,7 @@ export default function TarifsPage() {
               placeholder="55.00"
               value={form.prixUnitaire}
               onChange={e => setForm(f => ({ ...f, prixUnitaire: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
               required
             />
           </div>
@@ -152,7 +152,7 @@ export default function TarifsPage() {
               placeholder="Ex: Plomberie"
               value={form.categorie}
               onChange={e => setForm(f => ({ ...f, categorie: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
             />
             <datalist id="categories-list">
               {CATEGORIES_SUGGERES.map(c => <option key={c} value={c} />)}
@@ -210,14 +210,14 @@ export default function TarifsPage() {
                               type="text"
                               value={editForm.designation}
                               onChange={e => setEditForm(f => ({ ...f, designation: e.target.value }))}
-                              className="w-full px-2 py-1 border border-blue-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                              className="w-full px-2 py-1 border border-blue-300 rounded text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-500"
                             />
                           </td>
                           <td className="px-4 py-2">
                             <select
                               value={editForm.unite}
                               onChange={e => setEditForm(f => ({ ...f, unite: e.target.value }))}
-                              className="w-full px-2 py-1 border border-blue-300 rounded text-sm focus:outline-none"
+                              className="w-full px-2 py-1 border border-blue-300 rounded text-sm text-gray-900 focus:outline-none"
                             >
                               {UNITES_SUGGERES.map(u => <option key={u} value={u}>{u}</option>)}
                             </select>
@@ -228,7 +228,7 @@ export default function TarifsPage() {
                               step="0.01"
                               value={editForm.prixUnitaire}
                               onChange={e => setEditForm(f => ({ ...f, prixUnitaire: e.target.value }))}
-                              className="w-full px-2 py-1 border border-blue-300 rounded text-sm text-right focus:outline-none focus:ring-1 focus:ring-blue-500"
+                              className="w-full px-2 py-1 border border-blue-300 rounded text-sm text-gray-900 text-right focus:outline-none focus:ring-1 focus:ring-blue-500"
                             />
                           </td>
                           <td className="px-4 py-2 text-right">

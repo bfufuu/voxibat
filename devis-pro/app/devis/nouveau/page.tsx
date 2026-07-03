@@ -193,7 +193,7 @@ export default function NouveauDevisPage() {
                 type="text"
                 value={titre}
                 onChange={e => setTitre(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Ex: Rénovation salle de bain - M. Martin"
               />
             </div>
@@ -202,7 +202,7 @@ export default function NouveauDevisPage() {
               <select
                 value={clientId}
                 onChange={e => setClientId(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Sans client</option>
                 {clients.map(c => (
@@ -215,7 +215,7 @@ export default function NouveauDevisPage() {
               <select
                 value={tva}
                 onChange={e => setTva(Number(e.target.value))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value={5.5}>5,5% (travaux rénovation)</option>
                 <option value={10}>10% (travaux)</option>
@@ -236,20 +236,20 @@ export default function NouveauDevisPage() {
                 placeholder="Nom *"
                 value={newClient.name}
                 onChange={e => setNewClient(p => ({ ...p, name: e.target.value }))}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <input
                 placeholder="Email"
                 value={newClient.email}
                 onChange={e => setNewClient(p => ({ ...p, email: e.target.value }))}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <div className="flex gap-2">
                 <input
                   placeholder="Téléphone"
                   value={newClient.phone}
                   onChange={e => setNewClient(p => ({ ...p, phone: e.target.value }))}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <button onClick={handleCreateClient} className="px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700">
                   OK
@@ -332,14 +332,14 @@ export default function NouveauDevisPage() {
                         <input
                           value={ligne.designation}
                           onChange={e => updateLigne(i, 'designation', e.target.value)}
-                          className="w-full px-2 py-1 border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full px-2 py-1 border border-gray-200 rounded text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />
                       </td>
                       <td className="py-2 pr-3">
                         <input
                           value={ligne.unite}
                           onChange={e => updateLigne(i, 'unite', e.target.value)}
-                          className="w-full px-2 py-1 border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full px-2 py-1 border border-gray-200 rounded text-gray-900 focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />
                       </td>
                       <td className="py-2 pr-3">
@@ -347,7 +347,7 @@ export default function NouveauDevisPage() {
                           type="number"
                           value={ligne.quantite}
                           onChange={e => updateLigne(i, 'quantite', parseFloat(e.target.value) || 0)}
-                          className="w-full px-2 py-1 border border-gray-200 rounded text-right focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full px-2 py-1 border border-gray-200 rounded text-gray-900 text-right focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />
                       </td>
                       <td className="py-2 pr-3">
@@ -355,7 +355,7 @@ export default function NouveauDevisPage() {
                           type="number"
                           value={ligne.prixUnitaire}
                           onChange={e => updateLigne(i, 'prixUnitaire', parseFloat(e.target.value) || 0)}
-                          className="w-full px-2 py-1 border border-gray-200 rounded text-right focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full px-2 py-1 border border-gray-200 rounded text-gray-900 text-right focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />
                       </td>
                       <td className="py-2 pr-3 text-right font-medium text-gray-900">
