@@ -59,8 +59,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Barre mobile */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 sticky top-0 z-30">
-        <span className="text-lg font-bold text-blue-600">Voxibat</span>
+      <div className="md:hidden flex items-center px-4 py-3 bg-white border-b border-gray-200 sticky top-0 z-30">
         <button
           onClick={() => setOpen(true)}
           className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
