@@ -25,8 +25,8 @@ export default function CgvPage() {
           <section>
             <h2 className="text-lg font-semibold text-gray-900 mb-3">1. Vendeur</h2>
             <div className="p-4 bg-gray-50 rounded-lg space-y-1">
-              <p><strong>Benjamin Furrer</strong> — Auto-entrepreneur</p>
-              <p>SIRET : <em>[À compléter]</em></p>
+              <p><strong>Voxibat</strong> — Auto-entrepreneur</p>
+              <p>SIREN : 107 087 967 — SIRET : 107 087 967 00017</p>
               <p>Email : <a href="mailto:contact@voxibat.fr" className="text-blue-600 hover:underline">contact@voxibat.fr</a></p>
             </div>
           </section>

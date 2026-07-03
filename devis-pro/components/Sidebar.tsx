@@ -44,6 +44,12 @@ export default function Sidebar() {
         >
           <span>👤</span> Mon profil
         </Link>
+        <Link
+          href="/contact"
+          className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+        >
+          <span>💬</span> Contact
+        </Link>
       </nav>
       <div className="p-4 border-t border-gray-200">
         <LogoutButton />

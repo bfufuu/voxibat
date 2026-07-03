@@ -25,9 +25,10 @@ export default function MentionsLegalesPage() {
             <h2 className="text-lg font-semibold text-gray-900 mb-3">1. Éditeur du site</h2>
             <p>Le site <strong>voxibat.fr</strong> est édité par :</p>
             <div className="mt-2 p-4 bg-gray-50 rounded-lg space-y-1">
-              <p><strong>Benjamin Furrer</strong></p>
+              <p><strong>Voxibat</strong></p>
               <p>Auto-entrepreneur</p>
-              <p>SIRET : <em>[À compléter après création de l'auto-entreprise]</em></p>
+              <p>SIREN : 107 087 967</p>
+              <p>SIRET : 107 087 967 00017</p>
               <p>Email : contact@voxibat.fr</p>
             </div>
           </section>
@@ -44,10 +45,10 @@ export default function MentionsLegalesPage() {
           <section>
             <h2 className="text-lg font-semibold text-gray-900 mb-3">3. Propriété intellectuelle</h2>
             <p>
-              L'ensemble du contenu du site Voxibat (textes, images, graphismes, logo, icônes, logiciels) est la propriété exclusive de Benjamin Furrer et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
+              L'ensemble du contenu du site Voxibat (textes, images, graphismes, logo, icônes, logiciels) est la propriété exclusive de Voxibat et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
             </p>
             <p className="mt-2">
-              Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de Benjamin Furrer.
+              Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de Voxibat.
             </p>
           </section>
 

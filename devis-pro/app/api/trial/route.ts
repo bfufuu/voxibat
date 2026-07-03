@@ -2,16 +2,20 @@ import { NextResponse } from 'next/server'
 import { getSession } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 
+const WHITELISTED_EMAILS = ['furrer.benjamin5@gmail.com', 'test-verify@voxibat.fr']
+
 export async function GET() {
   const session = await getSession()
   if (!session) return NextResponse.json({ error: 'Non autorisé' }, { status: 401 })
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { trialEndsAt: true, isPaid: true },
+    select: { email: true, trialEndsAt: true, isPaid: true },
   })
 
   if (!user) return NextResponse.json({ error: 'Introuvable' }, { status: 404 })
+
+  if (WHITELISTED_EMAILS.includes(user.email)) return NextResponse.json({ active: true })
 
   if (user.isPaid) return NextResponse.json({ active: true })
 

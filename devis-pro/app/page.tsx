@@ -372,7 +372,7 @@ export default function Home() {
           <Link href="/cgu" className="hover:text-white transition-colors">CGU</Link>
           <Link href="/cgv" className="hover:text-white transition-colors">CGV</Link>
           <Link href="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link>
-          <span>© 2026 Voxibat — Benjamin Furrer</span>
+          <span>© 2026 Voxibat</span>
         </div>
       </footer>
     </div>

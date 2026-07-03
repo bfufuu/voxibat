@@ -25,7 +25,7 @@ export default function CguPage() {
           <section>
             <h2 className="text-lg font-semibold text-gray-900 mb-3">1. Objet</h2>
             <p>
-              Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du service Voxibat, logiciel SaaS de création de devis et facturation destiné aux artisans du bâtiment (BTP), édité par Benjamin Furrer, auto-entrepreneur.
+              Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du service Voxibat, logiciel SaaS de création de devis et facturation destiné aux artisans du bâtiment (BTP), édité par Voxibat, auto-entrepreneur.
             </p>
           </section>
 

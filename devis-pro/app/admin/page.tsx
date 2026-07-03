@@ -2,12 +2,14 @@ import { getSession } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
+import ResetTestDataButton from './ResetTestDataButton'
 
 export const metadata: Metadata = {
   title: 'Admin | Voxibat',
 }
 
 const ADMIN_EMAIL = 'furrer.benjamin5@gmail.com'
+const EXCLUDED_EMAILS = ['furrer.benjamin5@gmail.com', 'test-verify@voxibat.fr']
 
 export default async function AdminPage() {
   const session = await getSession()
@@ -18,13 +20,15 @@ export default async function AdminPage() {
 
   const now = new Date()
   const debutMois = new Date(now.getFullYear(), now.getMonth(), 1)
+  const excludeFilter = { email: { notIn: EXCLUDED_EMAILS } }
 
   const [totalUsers, newUsersThisMonth, paidUsers, trialUsers, allUsers] = await Promise.all([
-    prisma.user.count(),
-    prisma.user.count({ where: { createdAt: { gte: debutMois } } }),
-    prisma.user.count({ where: { isPaid: true } }),
-    prisma.user.count({ where: { isPaid: false, trialEndsAt: { gte: now } } }),
+    prisma.user.count({ where: excludeFilter }),
+    prisma.user.count({ where: { ...excludeFilter, createdAt: { gte: debutMois } } }),
+    prisma.user.count({ where: { ...excludeFilter, isPaid: true } }),
+    prisma.user.count({ where: { ...excludeFilter, isPaid: false, trialEndsAt: { gte: now } } }),
     prisma.user.findMany({
+      where: excludeFilter,
       orderBy: { createdAt: 'desc' },
       select: {
         id: true,
@@ -59,9 +63,12 @@ export default async function AdminPage() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard Admin</h1>
-          <p className="text-gray-500">Vue globale de Voxibat — accès restreint</p>
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Dashboard Admin</h1>
+            <p className="text-gray-500">Vue globale de Voxibat — accès restreint</p>
+          </div>
+          <ResetTestDataButton />
         </div>
 
         {/* KPIs */}

@@ -4,7 +4,7 @@ import { jwtVerify } from 'jose'
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET || '')
 
-const protectedRoutes = ['/dashboard', '/devis', '/profil', '/factures', '/tarifs', '/abonnement', '/admin']
+const protectedRoutes = ['/dashboard', '/devis', '/profil', '/factures', '/tarifs', '/abonnement', '/admin', '/contact']
 const authRoutes = ['/login', '/register']
 
 export async function proxy(request: NextRequest) {
