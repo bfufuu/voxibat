@@ -48,12 +48,25 @@ export default async function DashboardPage(props: { searchParams: Promise<{ abo
     }),
   ])
 
-  const total = await prisma.devis.count({ where: { userId: session.userId } })
-  const acceptes = await prisma.devis.count({ where: { userId: session.userId, status: 'accepte' } })
-  const ca = await prisma.devis.aggregate({
-    where: { userId: session.userId, status: 'accepte' },
-    _sum: { totalTTC: true },
-  })
+  const debutAnnee = new Date(now.getFullYear(), 0, 1)
+  const finAnnee = new Date(now.getFullYear(), 11, 31, 23, 59, 59)
+
+  const [total, acceptes, ca, caAnnee] = await Promise.all([
+    prisma.devis.count({ where: { userId: session.userId } }),
+    prisma.devis.count({ where: { userId: session.userId, status: 'accepte' } }),
+    prisma.devis.aggregate({
+      where: { userId: session.userId, status: 'accepte' },
+      _sum: { totalTTC: true },
+    }),
+    prisma.facture.aggregate({
+      where: {
+        userId: session.userId,
+        status: 'payee',
+        createdAt: { gte: debutAnnee, lte: finAnnee },
+      },
+      _sum: { totalTTC: true },
+    }),
+  ])
 
   return (
     <div className="p-8">
@@ -91,7 +104,7 @@ export default async function DashboardPage(props: { searchParams: Promise<{ abo
         <p className="text-gray-500">Voici un résumé de votre activité</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
           <p className="text-sm text-gray-500 mb-1">Total devis</p>
           <p className="text-3xl font-bold text-gray-900">{total}</p>
@@ -113,6 +126,46 @@ export default async function DashboardPage(props: { searchParams: Promise<{ abo
           </p>
         </div>
       </div>
+
+      {/* Compteur seuil auto-entrepreneur */}
+      {(() => {
+        const SEUIL = 77700
+        const caAnneeVal = caAnnee._sum.totalTTC || 0
+        const pct = Math.min((caAnneeVal / SEUIL) * 100, 100)
+        const restant = Math.max(SEUIL - caAnneeVal, 0)
+        const couleur = pct >= 90 ? 'bg-red-500' : pct >= 70 ? 'bg-orange-400' : 'bg-green-500'
+        const alerte = pct >= 90 ? 'border-red-200 bg-red-50' : pct >= 70 ? 'border-orange-200 bg-orange-50' : 'border-gray-100 bg-white'
+        return (
+          <div className={`mb-8 p-6 rounded-xl shadow-sm border ${alerte}`}>
+            <div className="flex justify-between items-start mb-3">
+              <div>
+                <p className="font-semibold text-gray-900">Seuil auto-entrepreneur {now.getFullYear()}</p>
+                <p className="text-sm text-gray-500">CA encaissé cette année · limite légale : 77 700 €</p>
+              </div>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-gray-900">
+                  {caAnneeVal.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {restant > 0
+                    ? `${restant.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })} avant le seuil`
+                    : '⚠️ Seuil dépassé — changement de statut requis'}
+                </p>
+              </div>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-3">
+              <div className={`h-3 rounded-full transition-all ${couleur}`} style={{ width: `${pct}%` }} />
+            </div>
+            <p className="text-xs text-gray-400 mt-2">{pct.toFixed(1)}% du seuil atteint</p>
+            {pct >= 70 && pct < 90 && (
+              <p className="text-sm text-orange-700 mt-2 font-medium">Pensez à consulter un comptable pour préparer votre transition en société.</p>
+            )}
+            {pct >= 90 && (
+              <p className="text-sm text-red-700 mt-2 font-medium">Attention : vous approchez du seuil légal. Contactez un comptable rapidement.</p>
+            )}
+          </div>
+        )
+      })()}
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100">
         <div className="p-6 border-b border-gray-100 flex justify-between items-center">
