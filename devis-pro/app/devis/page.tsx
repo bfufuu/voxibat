@@ -1,7 +1,6 @@
 import { getSession } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
-import '../dashboard/layout'
 
 const STATUS_LABELS: Record<string, string> = {
   brouillon: 'Brouillon',
@@ -28,62 +27,48 @@ export default async function DevisListPage() {
   })
 
   return (
-    <div className="p-8">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Mes devis</h2>
-        <Link href="/devis/nouveau" className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-          + Nouveau devis
+    <div className="p-4 md:p-8">
+      <div className="flex justify-between items-center mb-5">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Mes devis</h2>
+        <Link href="/devis/nouveau" className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-sm">
+          + Nouveau
         </Link>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100">
-        {devis.length === 0 ? (
-          <div className="p-12 text-center">
-            <p className="text-4xl mb-4">📄</p>
-            <p className="text-gray-500 mb-4">Aucun devis pour le moment</p>
-            <Link href="/devis/nouveau" className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Créer votre premier devis
+      {devis.length === 0 ? (
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-12 text-center">
+          <p className="text-4xl mb-4">📄</p>
+          <p className="text-gray-500 mb-4">Aucun devis pour le moment</p>
+          <Link href="/devis/nouveau" className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+            Créer votre premier devis
+          </Link>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {devis.map(d => (
+            <Link
+              key={d.id}
+              href={`/devis/${d.id}`}
+              className="flex items-center justify-between bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:border-blue-200 hover:shadow-md transition-all gap-3"
+            >
+              <div className="min-w-0">
+                <p className="font-semibold text-gray-900 truncate">{d.titre}</p>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  {d.numero} · {d.client?.name || 'Sans client'} · {new Date(d.createdAt).toLocaleDateString('fr-FR')}
+                </p>
+              </div>
+              <div className="shrink-0 flex flex-col items-end gap-1.5">
+                <span className={`px-2 py-0.5 text-xs font-medium rounded-full ${STATUS_COLORS[d.status]}`}>
+                  {STATUS_LABELS[d.status]}
+                </span>
+                <span className="text-sm font-bold text-gray-900">
+                  {d.totalTTC.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })}
+                </span>
+              </div>
             </Link>
-          </div>
-        ) : (
-          <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-100">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Numéro</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Titre</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Client</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Statut</th>
-                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Total TTC</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-50">
-              {devis.map(d => (
-                <tr key={d.id} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <Link href={`/devis/${d.id}`} className="text-blue-600 font-medium hover:underline">
-                      {d.numero}
-                    </Link>
-                  </td>
-                  <td className="px-6 py-4 text-gray-900">{d.titre}</td>
-                  <td className="px-6 py-4 text-gray-500">{d.client?.name || '-'}</td>
-                  <td className="px-6 py-4">
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full ${STATUS_COLORS[d.status]}`}>
-                      {STATUS_LABELS[d.status]}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-right font-semibold text-gray-900">
-                    {d.totalTTC.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
-                  </td>
-                  <td className="px-6 py-4 text-gray-500 text-sm">
-                    {new Date(d.createdAt).toLocaleDateString('fr-FR')}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
