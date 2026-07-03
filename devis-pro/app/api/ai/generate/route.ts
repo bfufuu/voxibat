@@ -68,7 +68,8 @@ Exemple: [{"designation":"Dépose ancienne baignoire","unite":"forfait","quantit
   }
 
   try {
-    const lignes = JSON.parse(content.text)
+    const raw = content.text.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim()
+    const lignes = JSON.parse(raw)
     return NextResponse.json({ lignes, catalogueUtilise: tarifs.length > 0 })
   } catch {
     return NextResponse.json({ error: 'Erreur de parsing IA' }, { status: 500 })

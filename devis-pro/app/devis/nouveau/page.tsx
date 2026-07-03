@@ -233,7 +233,7 @@ export default function NouveauDevisPage() {
               onChange={e => setDescription(e.target.value)}
               placeholder="Décrivez le chantier... ou appuyez sur 🎤 pour parler"
               rows={4}
-              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none pr-12 ${recording ? 'border-red-400 bg-red-50' : 'border-gray-300'}`}
+              className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm text-gray-900 resize-none pr-12 ${recording ? 'border-red-400 bg-red-50' : 'border-gray-300'}`}
             />
             <button
               type="button"
