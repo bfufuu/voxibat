@@ -138,7 +138,7 @@ export default function NouveauDevisPage() {
   return (
     <div className="p-4 md:p-8 max-w-4xl pb-24">
       <div className="flex justify-between items-center mb-5">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Nouveau devis</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 pl-10 md:pl-0">Nouveau devis</h2>
       </div>
 
       {error && (

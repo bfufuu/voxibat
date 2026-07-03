@@ -29,7 +29,7 @@ export default async function DevisListPage() {
   return (
     <div className="p-4 md:p-8">
       <div className="flex justify-between items-center mb-5">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Mes devis</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 pl-10 md:pl-0">Mes devis</h2>
         <Link href="/devis/nouveau" className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-sm">
           + Nouveau
         </Link>

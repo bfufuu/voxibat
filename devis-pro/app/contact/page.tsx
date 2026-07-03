@@ -31,7 +31,7 @@ export default function ContactPage() {
   return (
     <div className="p-8 max-w-2xl">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Nous contacter</h2>
+        <h2 className="text-2xl font-bold text-gray-900 pl-10 md:pl-0">Nous contacter</h2>
         <p className="text-gray-500 mt-1">Une question, un problème ou une suggestion ? On vous répond rapidement.</p>
       </div>
 

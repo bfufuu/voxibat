@@ -33,7 +33,7 @@ export default async function FacturesPage() {
   return (
     <div className="p-4 md:p-8">
       <div className="flex justify-between items-center mb-5">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Mes factures</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 pl-10 md:pl-0">Mes factures</h2>
       </div>
 
       {/* Stats — 3 colonnes compactes */}

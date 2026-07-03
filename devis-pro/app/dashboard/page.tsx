@@ -87,7 +87,7 @@ export default async function DashboardPage(props: { searchParams: Promise<{ abo
       )}
 
       <div className="mb-6">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900 pl-10 md:pl-0">
           Bonjour {user?.name || user?.email?.split('@')[0]} 👋
         </h2>
         <p className="text-gray-500 text-sm">Voici un résumé de votre activité</p>

@@ -100,7 +100,7 @@ export default function TarifsPage() {
   return (
     <div className="p-8 max-w-4xl">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Mon catalogue de tarifs</h2>
+        <h2 className="text-2xl font-bold text-gray-900 pl-10 md:pl-0">Mon catalogue de tarifs</h2>
         <p className="text-gray-500 mt-1">
           L'IA utilisera vos tarifs en priorité lors de la génération des devis.
         </p>
