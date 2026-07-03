@@ -49,7 +49,7 @@ export default function RegisterPage() {
               type="text"
               value={name}
               onChange={e => setName(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
               placeholder="Jean Dupont"
             />
           </div>
@@ -60,7 +60,7 @@ export default function RegisterPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
               placeholder="vous@exemple.fr"
             />
           </div>
@@ -72,7 +72,7 @@ export default function RegisterPage() {
               onChange={e => setPassword(e.target.value)}
               required
               minLength={8}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
               placeholder="Minimum 8 caractères"
             />
           </div>
