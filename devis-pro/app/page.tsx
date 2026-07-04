@@ -92,7 +92,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-10">
-            <h1 className="text-2xl font-bold text-white">Voxibat</h1>
+            <img src="/logo-banner-white.svg" alt="Voxibat" className="h-8" />
             <div className="hidden md:flex gap-6 text-sm text-gray-300">
               <a href="#fonctionnalites" className="hover:text-white transition-colors">Fonctionnalités</a>
               <a href="#comparaison" className="hover:text-white transition-colors">Comparaison</a>
@@ -356,7 +356,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-400 py-10 px-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <p className="text-white font-bold text-lg mb-1">Voxibat</p>
+            <img src="/logo-banner-white.svg" alt="Voxibat" className="h-7 mb-1" />
             <p className="text-sm">Devis et facturation pour artisans BTP · Conforme 2026</p>
           </div>
           <div className="flex flex-wrap gap-6 text-sm">

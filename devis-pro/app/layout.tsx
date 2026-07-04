@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Voxibat - Devis pour artisans BTP",
   description: "Générez des devis professionnels en quelques minutes",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

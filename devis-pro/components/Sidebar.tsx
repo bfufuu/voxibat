@@ -80,7 +80,7 @@ export default function Sidebar() {
       {/* Drawer mobile */}
       <div className={`md:hidden fixed top-0 left-0 h-full w-72 bg-white z-50 flex flex-col shadow-xl transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex items-center justify-between p-5 border-b border-gray-200">
-          <span className="text-xl font-bold text-blue-600">Voxibat</span>
+          <img src="/logo-banner.svg" alt="Voxibat" className="h-7" />
           <button
             onClick={() => setOpen(false)}
             className="p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors"
@@ -96,7 +96,7 @@ export default function Sidebar() {
       {/* Sidebar desktop */}
       <aside className="hidden md:flex w-64 bg-white border-r border-gray-200 flex-col min-h-screen">
         <div className="p-6 border-b border-gray-200">
-          <h1 className="text-xl font-bold text-blue-600">Voxibat</h1>
+          <img src="/logo-banner.svg" alt="Voxibat" className="h-7" />
         </div>
         <NavLinks />
       </aside>
