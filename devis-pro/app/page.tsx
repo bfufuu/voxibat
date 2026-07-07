@@ -237,26 +237,28 @@ export default function Home() {
             <p className="text-gray-500">La seule solution qui couvre la conformité légale 2026</p>
           </div>
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-100">
-                  <th className="px-6 py-4 text-left text-gray-500 font-medium w-1/2">Fonctionnalité</th>
-                  <th className="px-4 py-4 text-center text-gray-400 font-medium">Word/Excel</th>
-                  <th className="px-4 py-4 text-center text-gray-400 font-medium">Autres logiciels</th>
-                  <th className="px-4 py-4 text-center text-blue-600 font-bold bg-blue-50">Voxibat</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {COMPARAISON.map((row, i) => (
-                  <tr key={row.critere} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
-                    <td className="px-6 py-3 text-gray-700 font-medium">{row.critere}</td>
-                    <td className="px-4 py-3 text-center text-lg">{row.word}</td>
-                    <td className="px-4 py-3 text-center text-lg">{row.devisia}</td>
-                    <td className="px-4 py-3 text-center text-lg bg-blue-50 font-bold">{row.nous}</td>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm min-w-[480px]">
+                <thead>
+                  <tr className="border-b border-gray-100">
+                    <th className="px-4 py-4 text-left text-gray-500 font-medium">Fonctionnalité</th>
+                    <th className="px-3 py-4 text-center text-gray-400 font-medium whitespace-nowrap">Word/Excel</th>
+                    <th className="px-3 py-4 text-center text-gray-400 font-medium whitespace-nowrap">Autres logiciels</th>
+                    <th className="px-3 py-4 text-center text-blue-600 font-bold bg-blue-50 whitespace-nowrap">Voxibat</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {COMPARAISON.map((row, i) => (
+                    <tr key={row.critere} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+                      <td className="px-4 py-3 text-gray-700 font-medium">{row.critere}</td>
+                      <td className="px-3 py-3 text-center text-lg">{row.word}</td>
+                      <td className="px-3 py-3 text-center text-lg">{row.devisia}</td>
+                      <td className="px-3 py-3 text-center text-lg bg-blue-50 font-bold">{row.nous}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <p className="text-center text-xs text-gray-400 mt-4">
             Comparaison basée sur les fonctionnalités publiquement disponibles des solutions concurrentes — juin 2026
