@@ -41,14 +41,14 @@ const FEATURES = [
 ]
 
 const COMPARAISON = [
-  { critere: 'Génération IA', word: '❌', devisia: '✅', nous: '✅' },
-  { critere: 'Commande vocale', word: '❌', devisia: '❌', nous: '✅' },
-  { critere: 'Export Factur-X 2026', word: '❌', devisia: '❌', nous: '✅' },
-  { critere: 'Relances automatiques', word: '❌', devisia: '❌', nous: '✅' },
-  { critere: 'Catalogue tarifs perso', word: '❌', devisia: '❌', nous: '✅' },
+  { critere: 'Dictée vocale par IA', word: '❌', devisia: '❌', nous: '✅' },
+  { critere: 'Génération auto des lignes', word: '❌', devisia: '❌', nous: '✅' },
+  { critere: 'Optimisé téléphone', word: '❌', devisia: '⚠️', nous: '✅' },
   { critere: 'Devis → Facture 1 clic', word: '❌', devisia: '✅', nous: '✅' },
+  { critere: 'Relances automatiques', word: '❌', devisia: '❌', nous: '✅' },
+  { critere: 'Catalogue tarifs perso', word: '❌', devisia: '✅', nous: '✅' },
   { critere: 'PDF professionnel', word: '✅', devisia: '✅', nous: '✅' },
-  { critere: 'Conformité légale 2026', word: '❌', devisia: '❌', nous: '✅' },
+  { critere: 'Conformité légale 2026', word: '❌', devisia: '⚠️', nous: '✅' },
 ]
 
 const ETAPES = [
@@ -242,8 +242,8 @@ export default function Home() {
                 <thead>
                   <tr className="border-b border-gray-100">
                     <th className="px-4 py-4 text-left text-gray-500 font-medium">Fonctionnalité</th>
-                    <th className="px-3 py-4 text-center text-gray-400 font-medium whitespace-nowrap">Word/Excel</th>
-                    <th className="px-3 py-4 text-center text-gray-400 font-medium whitespace-nowrap">Autres logiciels</th>
+                    <th className="px-3 py-4 text-center text-gray-400 font-medium whitespace-nowrap">Word / Excel</th>
+                    <th className="px-3 py-4 text-center text-gray-400 font-medium whitespace-nowrap">Tolteck</th>
                     <th className="px-3 py-4 text-center text-blue-600 font-bold bg-blue-50 whitespace-nowrap">Voxibat</th>
                   </tr>
                 </thead>
@@ -261,7 +261,7 @@ export default function Home() {
             </div>
           </div>
           <p className="text-center text-xs text-gray-400 mt-4">
-            Comparaison basée sur les fonctionnalités publiquement disponibles des solutions concurrentes — juin 2026
+            Comparaison basée sur les fonctionnalités publiquement disponibles de Tolteck et Microsoft Office — juillet 2026
           </p>
         </div>
       </section>
